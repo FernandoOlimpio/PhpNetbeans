@@ -65,9 +65,9 @@ class CadastroPessoa {
 
 
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="margin-top: 20px">
                 <div class="col-8 offset-2">
-                    <div class="card-header bg-light text-center">
+                    <div class="card-header bg-light text-center border">
                         Cadastro de Cliente
                     </div>
                     <div class="card-body border">
@@ -122,7 +122,7 @@ class CadastroPessoa {
                                         <div class="col-md-4  offset-md-4 btInput">
                                              <input type="submit" name="cadastrar"
                                                class="btn-success" value="Enviar">
-                                             &nbsp; &nbsp;
+                                             &nbsp; &nbsp;  
                                              <input type="reset" class="btn-light" 
                                                    value="Limpar">
                                         </div>
