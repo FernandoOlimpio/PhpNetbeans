@@ -19,14 +19,14 @@ and open the template in the editor.
     <body>
     <div class="container">
             <div class="row espaco">
-                <div class="col-xl-12 col-md-6 offset-md-3"
+                <div class="col-md-6 offset-md-3"
                      style="margin-top: 10%">
                 <div class="card-header bg-primary  border espaco text-white"
                      > Validação de login </div>                 
                   <div class="card-body border">
                       <form method="POST" action="">
                           <div class="row espaco">
-                              <div class="col-md-8 offset-md-2 col-xl-12">
+                              <div class="col-md-8 offset-md-2">
                                   <label>Usuário</label>
                                   
                               </div>
@@ -34,7 +34,7 @@ and open the template in the editor.
                           </div>
                           
                           <div class="row">
-                              <div class="col-md-8 offset-md-2 col-xl-12" >
+                              <div class="col-md-8 offset-md-2 " >
                                   <input class="form-control" type="text" 
                                          name="login">
                                   
@@ -42,12 +42,12 @@ and open the template in the editor.
                           </div>
                           
                           <div class="row espaco">
-                              <div class="col-md-8 offset-md-2 col-xl-12">
+                              <div class="col-md-8 offset-md-2 ">
                                   <label>Senha</label>
                               </div>
                           </div>
                           <div class="row">
-                                <div class="col-md-8 offset-md-2 col-xl-12">
+                                <div class="col-md-8 offset-md-2 ">
                                     <input class="form-control" type="text" 
                                            name="senha">
                                 </div>    
