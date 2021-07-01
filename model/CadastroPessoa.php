@@ -99,6 +99,7 @@ class CadastroPessoa {
                                 </div>
 
                                 <div class="col-md-6">
+                                    <br>
                                     <label> Perfil</label>
                                     <select name="perfil" class="form-control">
                                         <option> [SELECIONE]</option>
@@ -158,16 +159,3 @@ class CadastroPessoa {
 
 
 
-
-
-
-
-
-private $idPessoa;
-private $nome;
-private $dtNasc;
-private $login;
-private $senha;
-private $perfil;
-private $email;
-private $cpf;
