@@ -1,0 +1,39 @@
+VirtualBox COM Server 5.2.8 r121009 win.amd64 (Feb 26 2018 15:44:39) release log
+00:00:00.046886 main     Log opened 2020-12-15T11:16:23.285529900Z
+00:00:00.046886 main     Build Type: release
+00:00:00.046886 main     OS Product: Windows 10
+00:00:00.046886 main     OS Release: 10.0.18362
+00:00:00.046886 main     OS Service Pack: 
+00:00:00.078118 main     DMI Product Name: 10A80028BP
+00:00:00.093742 main     DMI Product Version: ThinkCentre M93p
+00:00:00.093742 main     Host RAM: 7981MB (7.7GB) total, 4965MB (4.8GB) available
+00:00:00.093742 main     Executable: C:\Program Files\Oracle\VirtualBox\VBoxSVC.exe
+00:00:00.093742 main     Process ID: 13448
+00:00:00.093742 main     Package type: WINDOWS_64BITS_GENERIC
+00:00:00.093742          VirtualBox: object creation starts
+00:00:00.109366          Home directory: 'C:\Users\02520429135\.VirtualBox'
+00:00:00.109366          Installed Drivers:
+00:00:00.125002            C:\WINDOWS\system32\DRIVERS\VBoxNetLwf.sys (Version: 5.2.8.21009)
+00:00:00.125002            C:\WINDOWS\system32\DRIVERS\VBoxUSBMon.sys (Version: 5.2.8.21009)
+00:00:00.140667            C:\WINDOWS\system32\DRIVERS\VBoxDrv.sys (Version: 5.2.8.21009)
+00:00:00.695536          netIfIsWireless: CreateFile on '\\.\{68C46BE7-358D-4F9D-B690-D871D0C74AD9}' failed with rcWin=2 (0x2) - ignoring
+00:00:00.695536          netIfIsWireless: CreateFile on '\\.\{C79D7E86-BA17-42E4-94A4-A2E4246A5AEE}' failed with rcWin=2 (0x2) - ignoring
+00:00:00.742369          HostDnsMonitor: old information
+00:00:00.742369            no server entries
+00:00:00.742369            no domain set
+00:00:00.742369            no search string entries
+00:00:00.742369          HostDnsMonitor: new information
+00:00:00.742369            server 1: 10.160.222.2
+00:00:00.742369            domain: edu.senac.br
+00:00:00.742369            no search string entries
+00:00:00.742369          HostDnsMonitorProxy::notify
+00:00:01.226689          VD: VDInit finished with VINF_SUCCESS
+00:00:01.242357          VirtualBox: object created
+00:02:10.028481          Saving settings file "C:\Users\02520429135\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:02:12.820200          Saving settings file "C:\Users\02520429135\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:02:13.869121          Saving settings file "C:\Users\02520429135\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:02:13.900331          Saving settings file "C:\Users\02520429135\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:02:13.915969          Saving settings file "C:\Users\02520429135\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:02:19.493743 main     VirtualBox: object deletion starts
+00:02:19.493743 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={9570b9d5-f1a1-448a-10c5-e12f5285adad} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:02:19.509342 main     VirtualBox: object deleted

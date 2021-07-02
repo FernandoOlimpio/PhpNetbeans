@@ -1,0 +1,17 @@
+VirtualBox GUI VM Selector Window 5.2.8 r121009 win.amd64 (Feb 26 2018 15:44:39) release log
+00:00:04.039012 Log opened 2020-12-15T11:16:24.821309400Z
+00:00:04.039012 Build Type: release
+00:00:04.039012 OS Product: Windows 10
+00:00:04.039012 OS Release: 10.0.18362
+00:00:04.039012 OS Service Pack: 
+00:00:04.085849 DMI Product Name: 10A80028BP
+00:00:04.085849 DMI Product Version: ThinkCentre M93p
+00:00:04.085849 Host RAM: 7981MB (7.7GB) total, 4962MB (4.8GB) available
+00:00:04.085849 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBox.exe
+00:00:04.085849 Process ID: 4592
+00:00:04.085849 Package type: WINDOWS_64BITS_GENERIC
+00:00:04.085849 Qt version: 5.6.2
+00:00:04.445194 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:04.445194 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:07.929855 refreshCertificates/#1: RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0  RTCRX509POLICYQUALIFIERINFO::Qualifier: Bad IA5 string: ch=0x0
+00:00:07.945477 refreshCertificates/#3: Found 1/60 SSL certs we/you trust (previously 0/0).

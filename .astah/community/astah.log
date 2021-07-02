@@ -1,0 +1,48 @@
+2021-02-08 11:58:29,182 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-02-08 11:58:29,182 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-02-08 11:58:29,214 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args []
+2021-02-08 11:58:29,214 [main] JP.co.esm.caddies.jomt.jsystem.k <INFO> - jude property file not found. It is created at the time of the end of application.
+2021-02-08 11:58:34,184 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jview.swing.f <INFO> - maybe initial value of system property.
+2021-02-08 11:58:37,271 [Thread-7] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-02-08 11:59:39,595 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-02-08 13:05:02,291 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\Estudo Lógica de  Programação\Diagrama de caso de uso 8-2-21.asta
+2021-02-08 13:05:04,364 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jsystem.k <INFO> - file: C:\Users\02520429135\.astah\community\Jude.properties
+2021-02-08 13:05:04,369 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.JomtUtilities2 <INFO> - file: C:\Users\02520429135\.astah\community\astah_command.log
+2021-02-11 09:26:44,095 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-02-11 09:26:44,095 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-02-11 09:26:44,141 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args [-Xms16m, -Xmx512m, -Dsun.java2d.d3d=false]
+2021-02-11 09:26:50,342 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jview.swing.f <INFO> - invalid value. x is negative. x:-8, displayOriginX:0.0
+2021-02-11 09:26:50,343 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jview.swing.f <INFO> - invalid value. y is negative. y:-8, displayOriginY:0.0
+2021-02-11 09:26:52,861 [Thread-6] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-02-11 09:27:08,831 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-02-11 12:58:34,303 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jsystem.k <INFO> - file: C:\Users\02520429135\.astah\community\Jude.properties
+2021-02-11 12:58:34,307 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.JomtUtilities2 <INFO> - file: C:\Users\02520429135\.astah\community\astah_command.log
+2021-02-18 09:55:34,143 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-02-18 09:55:34,159 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-02-18 09:55:34,206 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args [-Xms16m, -Xmx512m, -Dsun.java2d.d3d=false]
+2021-02-18 09:55:40,403 [Thread-6] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-02-18 09:55:40,930 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-02-18 09:55:44,814 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jsystem.k <INFO> - file: C:\Users\02520429135\.astah\community\Jude.properties
+2021-02-18 09:55:44,816 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.JomtUtilities2 <INFO> - file: C:\Users\02520429135\.astah\community\astah_command.log
+2021-02-18 10:00:42,700 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-02-18 10:00:42,700 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-02-18 10:00:42,700 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args []
+2021-02-18 10:00:46,365 [Thread-7] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-02-18 10:00:48,559 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-02-18 12:23:56,516 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\Documentação\UseCase Diagram trabalho.asta
+2021-02-18 12:47:40,913 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\Documentação\UseCase Diagram trabalho.asta
+2021-03-24 10:29:32,524 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-03-24 10:29:32,540 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-03-24 10:29:32,633 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args [-Xms16m, -Xmx512m, -Dsun.java2d.d3d=false]
+2021-03-24 10:29:39,573 [Thread-6] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-03-24 10:29:42,683 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-03-24 12:10:56,617 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\UC10-Prof Ricardo\Programação java\Class Diagram Medico.asta
+2021-03-24 12:10:56,819 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jsystem.k <INFO> - file: C:\Users\02520429135\.astah\community\Jude.properties
+2021-03-24 12:10:56,823 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.JomtUtilities2 <INFO> - file: C:\Users\02520429135\.astah\community\astah_command.log
+2021-03-25 10:42:59,177 [main] JP.co.esm.caddies.jomt.Jude <INFO> - #### === Community 7.0.0 / 846701 ==============================
+2021-03-25 10:42:59,193 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start program args []
+2021-03-25 10:42:59,239 [main] JP.co.esm.caddies.jomt.Jude <INFO> - start vm args [-Xms16m, -Xmx512m, -Dsun.java2d.d3d=false]
+2021-03-25 10:43:06,632 [Thread-6] JP.co.esm.caddies.jomt.jutil.U <INFO> - This is the latest version of Astah.
+2021-03-25 10:43:08,660 [AWT-EventQueue-0] JP.co.esm.caddies.jomt.jutil.l <INFO> - stack=5m
+2021-03-25 11:02:09,326 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\UC10-Prof Ricardo\Programação java\Class Diagram herança exemplo.asta
+2021-03-25 11:06:38,243 [AWT-EventQueue-0] JP.co.esm.caddies.golf.model.EntityStore <INFO> - saveAs: C:\Users\02520429135\Desktop\UC10-Prof Ricardo\Programação java\Class Diagram herança exemplo.asta
