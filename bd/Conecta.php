@@ -17,51 +17,13 @@ class Conecta {
     private $password = "senac";
     private $base = "dbphpoo1";
     
-    public $db;
     
-    public function _construct() {
-        $db = $this -> conectadb;
-    }
-    
-    
-    public static function conectadb(){
-        $db = mysqli_connect($this ->getUrl(), $this ->getUser(), 
-                $this ->getPassword(), $this ->getBase());
+    public function conectadb(){
+        return mysqli_connect($this->url, $this->user, 
+                $this->password, $this->base);
         
-        return $db;
+        
     }
             
-    function getUrl() {
-        return $this->url;
-    }
-
-    function getUser() {
-        return $this->user;
-    }
-
-    function getPassword() {
-        return $this->password;
-    }
-
-    function getBase() {
-        return $this->base;
-    }
-
-    function setUrl($url) {
-        $this->url = $url;
-    }
-
-    function setUser($user) {
-        $this->user = $user;
-    }
-
-    function setPassword($password) {
-        $this->password = $password;
-    }
-
-    function setBase($base) {
-        $this->base = $base;
-    }
-
-
+   
 }
