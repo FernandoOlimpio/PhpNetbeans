@@ -22,7 +22,7 @@ class PessoaController {
         $pessoa ->setEmail($email);
         $pessoa ->setCpf($cpf);
                 
-                $daoPessoa = new daoPessoa();
+                $daoPessoa = new DaoPessoa();
                 return $daoPessoa ->inserir($pessoa);
     }
 }

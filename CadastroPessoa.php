@@ -143,11 +143,12 @@ class CadastroPessoa {
             $login = $_POST['login'];
             $senha = $_POST['senha'];
             $perfil = $_POST['perfil'];
-            $cpf = $_POST['email'];
-            $emal = $_POST['cpf'];
+            $email = $_POST['email'];
+            $cpf = $_POST['cpf'];
             
             $pc = new PessoaController();
-            $pc ->inserirPessoa($nome, $dtNasc, $login, $senha, $perfil, $email, $cpf);
+            echo "<p>".$pc ->inserirPessoa($nome, $dtNasc, $login, $senha, 
+                    $perfil, $email, $cpf). "<p>";
         }
 
         ?>        
