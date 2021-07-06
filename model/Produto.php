@@ -7,12 +7,22 @@
  */
 
 class Produto {
-
+    
+    private $idProduto;
     private $nomeProduto;
     private $vlrCompra;
     private $vlrVenda;
     private $qtdEstoque;
     
+    function getIdProduto() {
+        return $this->idProduto;
+    }
+
+    function setIdProduto($idProduto) {
+        $this->idProduto = $idProduto;
+    }
+
+        
     function getNomeProduto() {
         return $this->nomeProduto;
     }
