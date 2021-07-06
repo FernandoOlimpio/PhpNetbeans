@@ -37,28 +37,31 @@ class DaoProduto {
     }
 
     //Método para carregar lista de produtos do banco de dados
-    public function listarProdutosDao() {
+    public function listarProdutosDao(){
         $conn = new Conecta();
         if ($conn->conectadb()) {
             $sql = "select * from produto";
             $query = mysqli_query($conn->conectadb(), $sql);
             $result = mysqli_fetch_array($query);
             $lista = array();
-            $a= 0;
-            
-            do{
-                $produto = new Produto();
-                $produto-> setIdProduto($result['id']);
-                $produto-> setNomeProduto($result['nome']);
-                $produto-> setVlrCompra($result['vlrCompra']);
-                $produto-> setVlrVenda($result['vlrVenda']);
-                $produto-> setQtdEstoque($result['qtdEstoque']);
-                $lista[$a]= $produto;
-                $a++;
-            }while ($result = mysqli_fetch_array($query));
-            mysqli_close($conn->conectadb());
-            return $lista;
-        }   
+            $a = 0;
+            if ($result) {
+
+
+                do{
+                    $produto = new Produto();
+                    $produto->setIdProduto($result['id']);
+                    $produto->setNomeProduto($result['nome']);
+                    $produto->setVlrCompra($result['vlrCompra']);
+                    $produto->setVlrVenda($result['vlrVenda']);
+                    $produto->setQtdEstoque($result['qtdEstoque']);
+                    $lista[$a] = $produto;
+                    $a++;
+                } while ($result = mysqli_fetch_array($query));
+                mysqli_close($conn->conectadb());
+                return $lista;
+            }
+        }
     }
 
 }

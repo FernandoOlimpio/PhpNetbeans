@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-    include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
+include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
 
 class CadastroProduto {
     
@@ -90,7 +90,7 @@ class CadastroProduto {
                                     <input class="form-control" type="number"
                                            name="qtdEstoque">
 
-                                    <input type="submit" name="cadastrar"
+                                    <input type="submit" name="cadastrarProduto"
                                            class="btn-success" value="Enviar">
                                     &nbsp; &nbsp;  
                                     <input type="reset" class="btn-light" 
@@ -109,23 +109,45 @@ class CadastroProduto {
                         <th>Nome</th>
                         <th>Compra (R$)</th>
                         <th>Venda (R$)</th>
-                        <th>Estoque</th></tr>
+                        <th>Estoque</th>
+                        <th> Ações</th></tr>
                 </thead>
                 <tbody>
                     <?php
-                        include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
-                        
+                    include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
+
                     $pcTable = new ProdutoController();
                     $listaProdutos = $pcTable->listarProdutos();
-                    foreach ($listaProdutos as $lp){
-                        print_r("<tr><td>" . $lp->getIdProduto() . "</td>");
-                        print_r("<td>" . $lp->getNomeProduto() . "</td>");
-                        print_r("<td>" . $lp->getVlrCompra() . "</td>");
-                        print_r("<td>" . $lp->getVlrVenda() . "</td>");
-                        print_r("<td>" . $lp->getQtdEstoque() . "</td></tr>");
-                        
-                       
-                        
+                    foreach ($listaProdutos as $lp) {
+                        ?>
+
+                        <tr> <?php // jeito de preencher tabela mesclando php e html?>
+                            <td> <?php print_r($lp->getIdProduto());?></td>
+                            <td> <?php print_r($lp->getNomeProduto());?></td>
+                            <td> <?php print_r($lp->getVlrCompra());?></td>
+                            <td> <?php print_r($lp->getVlrVenda());?></td>
+                            <td> <?php print_r($lp->getQtdEstoque());?></td>
+                            
+                            <td><a class="btn btn-light"
+                                   href="#?id=<?php echo $lp->getIdProduto();?>">
+                                   Editar</a>
+                                
+                                <a class="btn btn-light"
+                                   href="#id=<?php echo $lp->getIdProduto();?>">
+                                   Excluir</a>
+                            </td>
+                        </tr>
+                        <?php
+                           /* print_r("<tr><td>" . $lp->getIdProduto() . "</td>");
+                            print_r("<td>" . $lp->getNomeProduto() . "</td>");
+                            print_r("<td>" . $lp->getVlrCompra() . "</td>");
+                            print_r("<td>" . $lp->getVlrVenda() . "</td>");
+                            print_r("<td>" . $lp->getQtdEstoque() . "</td></tr>");
+                            jeito de preencher tabela com php separado*/
+                             ?>
+                            
+
+                        <?php
                     }
                     ?>
                 </tbody>
@@ -138,7 +160,7 @@ class CadastroProduto {
 //envio dos dados para o BD
     include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
     if (isset($_POST['cadastrarProduto'])) {
-        $nomeProduto = $_POST['nome'];
+        $nomeProduto = $_POST['nomeProduto'];
         $vlrCompra = $_POST['vlrCompra'];
         $vlrVenda = $_POST['vlrVenda'];
         $qtdEstoque = $_POST['qtdEstoque'];
