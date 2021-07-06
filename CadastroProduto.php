@@ -5,6 +5,8 @@
  * and open the template in the editor.
  */
 
+    include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
+
 class CadastroProduto {
     
 }
@@ -14,7 +16,8 @@ class CadastroProduto {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+        <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
+
         <title>Formulário</title>
         <style>
             .btInput{
@@ -99,27 +102,54 @@ class CadastroProduto {
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-top: 30px;">
+            <table class="table table-striped table-responsive">
+                <thead class="table-dark">
+                    <tr><th>Código</th>
+                        <th>Nome</th>
+                        <th>Compra (R$)</th>
+                        <th>Venda (R$)</th>
+                        <th>Estoque</th></tr>
+                </thead>
+                <tbody>
+                    <?php
+                        include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
+                        
+                    $pcTable = new ProdutoController();
+                    $listaProdutos = $pcTable->listarProdutos();
+                    foreach ($listaProdutos as $lp){
+                        print_r("<tr><td>" . $lp->getIdProduto() . "</td>");
+                        print_r("<td>" . $lp->getNomeProduto() . "</td>");
+                        print_r("<td>" . $lp->getVlrCompra() . "</td>");
+                        print_r("<td>" . $lp->getVlrVenda() . "</td>");
+                        print_r("<td>" . $lp->getQtdEstoque() . "</td></tr>");
+                        
+                       
+                        
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
-</div>
-
-<?php
+    <?php
 //envio dos dados para o BD
-if (isset($_POST['cadastrarProduto'])) {
-    $nomeProduto = $_POST['nomeProduto'];
-    $vlrCompra = $_POST['vlrCompra'];
-    $vlrVenda = $_POST['vlrVenda'];
-    $qtdEstoque = $_POST['qtdEstoque'];
-    
+    include_once 'c:/xampp/htdocs/PhpNetbeans/controller/ProdutoController.php';
+    if (isset($_POST['cadastrarProduto'])) {
+        $nomeProduto = $_POST['nome'];
+        $vlrCompra = $_POST['vlrCompra'];
+        $vlrVenda = $_POST['vlrVenda'];
+        $qtdEstoque = $_POST['qtdEstoque'];
 
-    $pc = new ProdutoController();
-    echo $pc->inserirProduto();
-    
-}
-?>        
-<script src="js/bootstrap.js"</script>
-<script src="js/bootstrap.min.js" </script>
+
+        $pc = new ProdutoController();
+        echo $pc->inserirProduto();
+    }
+    ?>        
+    <script src="js/bootstrap.js"</script>
+    <script src="js/bootstrap.min.js" </script>
 </body>   
 
 </html>

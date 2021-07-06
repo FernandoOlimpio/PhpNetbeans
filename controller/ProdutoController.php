@@ -22,4 +22,10 @@ class ProdutoController {
         
     }
     
+    //Método para carregar a lista de produtos que vem da DAO
+    public function listarProdutos() {
+        $daoProduto = new DaoProduto();
+        return $daoProduto-> listarProdutosDao();
+        
+    }
 }
