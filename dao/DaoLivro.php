@@ -34,5 +34,32 @@ class DaoLivro {
         mysqli_close($conn->conectadb());
         return $msg;
     }
+    
+    public function listar() {
+        $conn = new ConectaLivro();
+        if ($conn->conectadb()) {
+            $sql = "select * from livro";
+            $query = mysqli_query($conn->conectadb(), $sql);
+            $result = mysqli_fetch_array($query);
+            $lista = array();
+            $a = 0;
+            if ($result) {
+                do{
+                    $livro = new Livro();
+                    $livro->setIdLivro($result['idlivro']);
+                    $livro->setTitulo($result['titulo']);
+                    $livro->setAutor($result['autor']);
+                    $livro->setEditora($result['editora']);
+                    $livro->setQtdEstoque($result['qtdestoque']);
+                    $lista[$a] = $livro;
+                    $a++;
+                } while ($result = mysqli_fetch_array($query));
+                mysqli_close($conn->conectadb());
+                return $lista;
+            }
+        }
+    
+        
+    }
 
 }

@@ -21,4 +21,9 @@ class LivroController{
         return $daoLivro->inserir($livro);
         
     }
+    
+    public function listarLivro() {
+        $daoLivro= new DaoLivro();
+        return $daoLivro->listar();
+    }
 }
