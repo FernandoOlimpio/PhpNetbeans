@@ -26,4 +26,27 @@ class LivroController{
         $daoLivro= new DaoLivro();
         return $daoLivro->listar();
     }
+    
+    //método para excluir livro
+    public function excluirLivro($id) {
+        $daoLivro =  new DaoLivro;
+        $daoLivro-> excluir($id);
+        
+    }
+    
+    //método para retornar objeto livro com os daods do BD
+    public function pesquisar($id) {
+        $daoLivro = new DaoLivro();
+        return $daoLivro->pesquisar($id);
+    }
+    
+    //método para editar livro
+    public function editarLivro($id) {
+        $daoLivro = new DaoLivro();
+        return $daoLivro->editar($id);
+    }
+    //método para limpar formulário
+    public function limpar() {
+        return ;
+    }
 }

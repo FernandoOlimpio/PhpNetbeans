@@ -1,9 +1,5 @@
 <?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$l = new Livro();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -59,7 +55,7 @@
 
                                 <label> Título</label>
                                 <input class="form-control" type="text"
-                                       name="titulo">
+                                       name="titulo" value="<?php echo $l->getTitulo(); ?>">
 
                                 <label> Autor</label>
                                 <input class="form-control" type="text"
@@ -76,7 +72,7 @@
                                 <input type="submit" name="cadastrarLivro"
                                        class="btn-success" value="Enviar">
                                 &nbsp; &nbsp;  
-                                <input type="reset" class="btn-light" 
+                                <input type="submit" class="btn-light" 
                                        value="Limpar">
 
                             </div>      
@@ -102,6 +98,12 @@
                                     URL='cadastroLivro.php'\">";
                     }
                 }
+                
+                if (isset($_POST['limpar'])) {
+                    $lc2 =new LivroController();
+                    $lc2 = 
+    
+}
                 ?>  
             </div>
         </div>
@@ -132,7 +134,7 @@
                             $a++;
                             ?>
 
-                            <tr> <!--<?php // jeito de preencher tabela mesclando php e html       ?>-->
+                            <tr> <!--<?php // jeito de preencher tabela mesclando php e html ?>-->
                                 <td> <?php print_r($ll->getIdLivro()); ?></td>
                                 <td> <?php print_r($ll->getTitulo()); ?></td>
                                 <td> <?php print_r($ll->getAutor()); ?></td>
@@ -140,84 +142,22 @@
                                 <td> <?php print_r($ll->getQtdEstoque()); ?></td>
 
                                 <td><!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                                    <button type="button"  href="controller/EditarLivro.php?id<?php echo $ll->getIdLivro();?>" class="btn btn-primary" data-bs-toggle="modal" 
                                             data-bs-target="#staticBackdropEditar">
                                         Editar</button></td>
-                                    
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdropEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Editar Livro</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-
-                                                    <div class="card-body border">
-                                                        <form method="post" action="">
-                                                            <div class="row">
-                                                                <div class="col-md-6 offset-md-3">
-                                                                    <label>Código: </label> 
-                                                                    <input type="number" name="codigo" value="<?php echo $ll->getIdLivro();?>">
-                                                                    <br>
-
-                                                                    <label> Título</label>
-                                                                    <input class="form-control" type="text"
-                                                                           name="titulo">
-
-                                                                    <label> Autor</label>
-                                                                    <input class="form-control" type="text"
-                                                                           name="autor">
-
-                                                                    <label> Editora </label>
-                                                                    <input class="form-control" type="text"
-                                                                           name="editora">
-
-                                                                    <label> Qtd Estoque </label>
-                                                                    <input class="form-control" type="number"
-                                                                           name="qtdEstoque">
-
-                                                                    <input type="submit" name="cadastrarLivro"
-                                                                           class="btn-success" value="Enviar">
-                                                                    &nbsp; &nbsp;  
-                                                                    <input type="reset" class="btn-light" 
-                                                                           value="Limpar">
-
-                                                                </div>      
-                                                        </form>
-                                                    </div>
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn btn-primary">Confirmar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!--<a class="btn btn-primary"
-                                       href="#?id=<?php echo $ll->getIdLivro(); ?>" >
-                                        Editar</a>-->
-                                    
-                                    <!-- Button trigger modal -->
-                                    <td> <button type="button" class="btn btn-warning" data-bs-toggle="modal" 
-                                            data-bs-target="#staticBackdrop">
-                                            Excluir</button> </td>
 
                                 <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="staticBackdropEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Excluir Livro</h5>
+                                        <h5 class="modal-title" id="staticBackdropLabel">Editar Livro</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
 
+                                    
+                                      
 
 
                                     </div>
@@ -229,13 +169,47 @@
                             </div>
                         </div>
 
+
+
+                        <!-- Button trigger modal -->
+                        <td> <button type="button" href="controller/ExcluirLivro.php?id<?php echo $ll->getIdLivro();?>" class="btn btn-warning" data-bs-toggle="modal" 
+                                     data-bs-target="#staticBackdrop">
+                                Excluir</button> </td>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Excluir Livro</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <form method="get" action="ExcluirLivro.php">
+                                        <label><strong>Deseja excluir o Livro
+                                            <?php echo $ll->getTitulo();?>?</strong></label>
+                                        <input type="hidden" name="ide"
+                                               value="<?php echo $ll->getIdLivro();?>">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Sim</button>
+                                        <button type="button" class="btn btn-primary">Não</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+
                         </tr>
 
 
 
 
-                        <?php
+                     <?php   
                     }
+                    
                 }
                 ?>
                 </tbody>

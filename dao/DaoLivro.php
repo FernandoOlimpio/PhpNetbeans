@@ -8,6 +8,7 @@
 
 include_once 'c:/xampp/htdocs/PhpNetbeans/bd/ConectaLivro.php';
 include_once 'c:/xampp/htdocs/PhpNetbeans/model/Livro.php';
+
 class DaoLivro {
 
     public function inserir(Livro $livro) {
@@ -18,48 +19,92 @@ class DaoLivro {
             $autor = $livro->getAutor();
             $editora = $livro->getEditora();
             $qtdEstoque = $livro->getQtdEstoque();
-            
-            $sql= "insert into livro values(null, '$titulo', '$autor', '$editora',
+
+            $sql = "insert into livro values(null, '$titulo', '$autor', '$editora',
                     '$qtdEstoque')";
-            
+
             if (mysqli_query($conn->conectadb(), $sql)) {
-                $msg= "<p style='color:green;'>Dados gravados com sucesso.</p>";
-            }else{
-                $msg= "<p style='color:red;'>Erro ao gravar.</p>";
+                $msg = "<p style='color:green;'>Dados gravados com sucesso.</p>";
+            } else {
+                $msg = "<p style='color:red;'>Erro ao gravar.</p>";
             }
-            
-        }else{
-            $msg= "<p style='color: red;'> Erro de DB.</p>";
+        } else {
+            $msg = "<p style='color: red;'> Erro de DB.</p>";
         }
         mysqli_close($conn->conectadb());
         return $msg;
     }
-    
+
     public function listar() {
         $conn = new ConectaLivro();
         if ($conn->conectadb()) {
             $sql = "select * from livro";
-            $query = mysqli_query($conn->conectadb(), $sql);
-            $result = mysqli_fetch_assoc($query);    //array
+            $result = mysqli_query($conn->conectadb(), $sql);
+            $row = mysqli_fetch_array($result);    //array
             $lista = array();
             $a = 0;
-            if ($result) {
-                do{
+            
+            if ($row) {
+                do {
                     $livro = new Livro();
-                    $livro->setIdLivro($result['idlivro']);
-                    $livro->setTitulo($result['titulo']);
-                    $livro->setAutor($result['autor']);
-                    $livro->setEditora($result['editora']);
-                    $livro->setQtdEstoque($result['qtdestoque']);
+                    $livro->setIdLivro($row['idlivro']);
+                    $livro->setTitulo($row['titulo']);
+                    $livro->setAutor($row['autor']);
+                    $livro->setEditora($row['editora']);
+                    $livro->setQtdEstoque($row['qtdestoque']);
                     $lista[$a] = $livro;
                     $a++;
-                } while ($result = mysqli_fetch_assoc($query));
+                } while ($row = mysqli_fetch_array($result));
                 mysqli_close($conn->conectadb());
                 return $lista;
             }
         }
-    
-        
+    }
+
+    //método para excluir produto na tela livro
+    public function excluir($id) {
+        $conn = new ConectaLivro();
+        $conecta = $conn->conectadb();
+        if ($conecta) {
+            $sql = "delete *from livro where id ='$id'";
+            mysqli_query($conecta, $sql);
+            header("Location: ../PhpNetbeans/cadastroLivro.php");
+            mysqli_close($conecta);
+            exit;
+        } else {
+            echo "<script> alert('banco inoperante')</script>";
+            echo "META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+                URL='../PhpNetbeans/cadastroLivro.php'\">";
+        }
+    }
+
+    //método para pesquisar os dados de livro por id
+    public function pesquisar($id) {
+        $conn = new ConectaLivro();
+        $conecta = $conn->conectadb();
+        if ($conecta) {
+            $sql = "select *from livro where id ='$id'";
+            $result = mysqli_query($conecta, $sql);
+            $linha = mysqli_fetch_assoc($result);
+            $livro = new Livro();
+            if ($linha) {
+                do {
+                    $livro->setIdLivro($linha['idLivro']);
+                    $livro->setTitulo($linha['titulo']);
+                    $livro->setAutor($linha['autor']);
+                    $livro->setEditora($linha['editora']);
+                    $livro->setQtdEstoque($linha['qtdestoque']);
+                } while ($linha = mysqli_fetch_assoc($result));
+            }
+            
+            mysqli_close($conecta);
+            
+        } else {
+            echo "<script> alert('banco inoperante')</script>";
+            echo "META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+                URL='../PhpNetbeans/cadastroLivro.php'\">";
+        }
+        return $livro;
     }
 
 }
