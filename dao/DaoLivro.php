@@ -40,7 +40,7 @@ class DaoLivro {
         if ($conn->conectadb()) {
             $sql = "select * from livro";
             $query = mysqli_query($conn->conectadb(), $sql);
-            $result = mysqli_fetch_array($query);
+            $result = mysqli_fetch_assoc($query);    //array
             $lista = array();
             $a = 0;
             if ($result) {
@@ -53,7 +53,7 @@ class DaoLivro {
                     $livro->setQtdEstoque($result['qtdestoque']);
                     $lista[$a] = $livro;
                     $a++;
-                } while ($result = mysqli_fetch_array($query));
+                } while ($result = mysqli_fetch_assoc($query));
                 mysqli_close($conn->conectadb());
                 return $lista;
             }
