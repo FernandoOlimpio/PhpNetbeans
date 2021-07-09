@@ -34,6 +34,32 @@ class DaoLivro {
         mysqli_close($conn->conectadb());
         return $msg;
     }
+    
+    //método para atualizar dados da tabela livro
+    public function atualizar(Livro $livro) {
+
+        $conn = new ConectaLivro();
+        if ($conn->conectadb()) {
+            $idLivro = $livro->getIdLivro();
+            $titulo = $livro->getTitulo();
+            $autor = $livro->getAutor();
+            $editora = $livro->getEditora();
+            $qtdEstoque = $livro->getQtdEstoque();
+
+            $sql = "update livro set titulo = '$titulo', autor ='$autor', "
+                    . "editora = '$editora','qtdestoque = $qtdEstoque')";
+
+            if (mysqli_query($conn->conectadb(), $sql)) {
+                $msg = "<p style='color:green;'>Dados gravados com sucesso.</p>";
+            } else {
+                $msg = "<p style='color:red;'>Erro ao gravar.</p>";
+            }
+        } else {
+            $msg = "<p style='color: red;'> Erro de DB.</p>";
+        }
+        mysqli_close($conn->conectadb());
+        return $msg;
+    }
 
     public function listar() {
         $conn = new ConectaLivro();
@@ -69,7 +95,7 @@ class DaoLivro {
         if ($conecta) {
             $sql = "delete from livro where idlivro ='$id'";
             mysqli_query($conecta, $sql);
-            header("Location: ../PhpNetbeans/cadastroLivro.php");
+            header("Location: ../CadastroLivro.php");
             mysqli_close($conecta);
             exit;
         } else {
@@ -85,7 +111,7 @@ class DaoLivro {
         $conecta = $conn->conectadb();
         $livro = new Livro();
         if ($conecta) {
-            $sql = "select *from livro where id ='$id'";
+            $sql = "select *from livro where idlivro ='$id'";
             $result = mysqli_query($conecta, $sql);
             $linha = mysqli_fetch_assoc($result);
             

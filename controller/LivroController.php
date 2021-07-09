@@ -22,6 +22,20 @@ class LivroController{
         
     }
     
+    //método para atualizar dados de livro no BD
+    public function atualizarLivro($idLivro,$titulo, $autor, $editora, $qtdEstoque){
+        $livro= new Livro();
+        $livro->setIdLivro($idLivro);
+        $livro->setTitulo($titulo);
+        $livro->setAutor($autor);
+        $livro->setEditora($editora);
+        $livro->setQtdEstoque($qtdEstoque);
+       
+        $daoLivro= new DaoLivro;
+        return $daoLivro->atualizar($livro);
+    }
+    
+    //método para carregar a lista de livro que vem da DAO
     public function listarLivro() {
         $daoLivro= new DaoLivro();
         return $daoLivro->listar();
@@ -35,7 +49,7 @@ class LivroController{
     }
     
     //método para retornar objeto livro com os daods do BD
-    public function pesquisar($id) {
+    public function pesquisarLivro($id) {
         $daoLivro = new DaoLivro();
         return $daoLivro->pesquisar($id);
     }
@@ -47,7 +61,7 @@ class LivroController{
     }
     //método para limpar formulário
     public function limpar() {
-        return null;
+        return $l = new Livro;
     }
     
     

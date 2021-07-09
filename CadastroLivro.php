@@ -69,21 +69,61 @@ $l = new Livro();
                                     URL='cadastroLivro.php'\">";
                         }
                     }
+                    
+                    //método para atualizar dados do produto no BD
+                        if (isset($_POST['atualizarLivro'])) {
+                            $titulo = trim($_POST['titulo']);
+                            if ($titulo != "") {
+                                $id = $_POST['idlivro2'];
+                                $autor = $_POST['autor'];
+                                $editora = $_POST['editora'];
+                            $qtdEstoque = $_POST['qtdEstoque'];
+
+                                $lc = new LivroController();
+                                unset($_POST['atualizarLivro']);
+                                echo $lc->atualizarLivro($id, $titulo, $editora, $qtdEstoque);
+                                echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
+                                    URL='cadastroLivro.php'\">";
+                            }
+                        }
+
+                     if(isset($_POST['excluirLivro'])){
+                      if ($l != null) {
+                          $id = $_POST['idlivro2'];
+                          $lc = new LivroController();
+                          $lc->excluirLivro($id);
+                      }
+
+                      } 
 
                     if (isset($_POST['limparLivro'])) {
-                        $lc2 = new LivroController();
-                        $l = $lc2->limpar();
-                        echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
-                                    URL='cadastroLivro.php'\">";
+                        $l = null;
+                        unset($_GET['idlivro']);
+                        header("Location: CadastroLivro.php");
                     }
+
+                    if (isset($_GET['idlivro'])) {
+                        $id = $_GET['idlivro'];
+                        $lc = new LivroController();
+                        $l = $lc->pesquisarLivro($id);
+                    }
+
+                    /*if (isset($_POST['sim'])) {
+                        header("Location: CadastroLivro.php");
+                    }*/
                     ?>  
 
                     <form method="post" action="">
                         <div class="row">
                             <div class="col-md-6 offset-md-3">
                                 <label>Código: </label>
-                                <input class="form-control" type="text"
-                                       name="idLivro" disabled="" value="<?php echo $l->getIdLivro(); ?>">
+                                <?php
+                                if ($l != null) {
+                                    echo $l->getIdLivro();
+                                }
+                                ?>
+                                <input class="form-control" type="text" style="color: blue;"
+                                       name="idlivro2" disabled="" value="<?php echo $l->getIdLivro(); ?>">
                                 <br>
 
                                 <label> Título</label>
@@ -103,11 +143,51 @@ $l = new Livro();
                                        name="qtdEstoque" value="<?php echo $l->getQtdEstoque(); ?>">
 
                                 <input type="submit" name="cadastrarLivro"
-                                       class="btn-success" value="Enviar">
-                                &nbsp; &nbsp;  
-                                <input type="submit" class="btn-light" name="limparlivro"
-                                       value="Limpar">
-
+                                       class="btn btn-success" value="Enviar">
+                                &nbsp; &nbsp; 
+                                
+                                <input type="submit" name="atualizarLivro"
+                                           class="btn btn-primary" value="Atualizar">
+                                &nbsp; &nbsp;
+                                
+                                <input type="button" data-bs-toggle="modal" data-bs-target="#ModalExcluir"
+                                       class="btn btn-warning" value="Excluir">                              
+                               
+                                                                    
+                                
+                                <!-- Modal para excluir no formulário-->
+                                    <div class="modal fade" id="ModalExcluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" 
+                                                        id="exampleModalLabel">
+                                                        Confirmar Exclusão</h5>
+                                                    <button type="button" 
+                                                            class="btn-close" 
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h5>Deseja Excluir?</h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="submit" name="excluirLivro"
+                                                           class="btn btn-success "
+                                                           value="Sim">
+                                                    <input type="submit" 
+                                                        class="btn btn-primary " 
+                                                        name="limpar" value="Não">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- fim do modal para excluir -->
+                                    &nbsp; &nbsp;
+                                    <input style="margin-top: 2px;" type="submit" 
+                                           class="btn btn-secondary" 
+                                           name="limpar" value="Limpar">
                             </div>      
                     </form>
                 </div>
@@ -150,8 +230,8 @@ $l = new Livro();
                                         <td> <?php print_r($ll->getQtdEstoque()); ?></td>
 
                                         <td><!-- Button trigger EDITAR-->
-                                            <a href="CadastroLivro.php?id=<?php echo $ll->getIdLivro(); ?>"
-                                               class="btn btn-primary">Editar
+                                            <a href="CadastroLivro.php?idlivro=<?php echo $ll->getIdLivro(); ?>"
+                                               class="btn btn-primary" >Editar
                                             </a></td>
 
                                         </form>
@@ -175,7 +255,7 @@ $l = new Livro();
                                                 <form method="get" action="controller/ExcluirLivro.php">
                                                     <label><strong>Deseja excluir o Livro 
                                                             <?php echo $ll->getTitulo(); ?>?</strong></label>
-                                                    <input type="text" name="ide" 
+                                                    <input type="hidden" name="ide" 
                                                            value="<?php echo $ll->getIdLivro(); ?>">
 
                                                     </div>
@@ -188,7 +268,7 @@ $l = new Livro();
 
 
                                                 </form>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
