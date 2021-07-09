@@ -55,9 +55,10 @@ class DaoLivro {
                     $lista[$a] = $livro;
                     $a++;
                 } while ($row = mysqli_fetch_array($result));
-                mysqli_close($conn->conectadb());
-                return $lista;
+                
             }
+            mysqli_close($conn->conectadb());
+                return $lista;
         }
     }
 
@@ -66,7 +67,7 @@ class DaoLivro {
         $conn = new ConectaLivro();
         $conecta = $conn->conectadb();
         if ($conecta) {
-            $sql = "delete *from livro where id ='$id'";
+            $sql = "delete from livro where idlivro ='$id'";
             mysqli_query($conecta, $sql);
             header("Location: ../PhpNetbeans/cadastroLivro.php");
             mysqli_close($conecta);
@@ -82,14 +83,15 @@ class DaoLivro {
     public function pesquisar($id) {
         $conn = new ConectaLivro();
         $conecta = $conn->conectadb();
+        $livro = new Livro();
         if ($conecta) {
             $sql = "select *from livro where id ='$id'";
             $result = mysqli_query($conecta, $sql);
             $linha = mysqli_fetch_assoc($result);
-            $livro = new Livro();
+            
             if ($linha) {
                 do {
-                    $livro->setIdLivro($linha['idLivro']);
+                    $livro->setIdLivro($linha['idlivro']);
                     $livro->setTitulo($linha['titulo']);
                     $livro->setAutor($linha['autor']);
                     $livro->setEditora($linha['editora']);
